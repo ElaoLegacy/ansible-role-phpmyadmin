@@ -1,0 +1,7 @@
+---
+
+- name: Configuring PMA
+  template: >
+    src=config.inc.php.j2
+    dest={{ elao_pma.root_dir|default('/srv/www/pma') }}/config.inc.php
+  sudo: yes

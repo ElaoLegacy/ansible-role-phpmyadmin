@@ -1,0 +1,17 @@
+---
+
+- name: Getting PMA
+  get_url: url="https://github.com/phpmyadmin/phpmyadmin/archive/{{ elao_pma.version }}.zip" dest="/tmp/{{ elao_pma.version }}.zip"
+  sudo: yes
+
+- name: Creating destination
+  file: path={{ elao_pma.root_dir|default("/srv/www/pma") }} state=directory owner="www-data" group="www-data"
+  sudo: yes
+
+- name: Uncompressing PMA
+  unarchive: src=/tmp/{{ elao_pma.version }}.zip dest=/tmp/ copy=no
+  sudo: yes
+
+- name: Moving to root directory
+  command: "rsync -azrv /tmp/phpmyadmin-{{ elao_pma.version }}/ {{ elao_pma.root_dir }}"
+  sudo: yes

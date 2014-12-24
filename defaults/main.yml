@@ -1,0 +1,13 @@
+---
+
+elao_pma:
+    version:            "RELEASE_4_3_3"
+    root_dir:           /srv/www/pma
+
+elao_pma_servers:
+    db1:
+        auth_type:          cookie
+        host:               "localhost"
+        connect_type:       tcp
+        compress:           "false"
+        AllowNoPassword:    "false"
