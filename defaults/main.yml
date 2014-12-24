@@ -5,7 +5,7 @@ elao_pma:
     root_dir:           /srv/www/pma
 
 elao_pma_servers:
-    db1:
+    localhost:
         auth_type:          cookie
         host:               "localhost"
         connect_type:       tcp

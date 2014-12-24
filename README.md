@@ -20,12 +20,12 @@ elao_pma:
     root_dir:           /srv/www/pma
 
 elao_pma_servers:
-    db1:
+    localhost:
         auth_type:          cookie
-        host:               "db-1.tuxboard.local"
+        host:               "localhost"
         connect_type:       tcp
         compress:           "false"
-        AllowNoPassword:    "true"
+        AllowNoPassword:    "false"
 ```
 
 # TODO 
